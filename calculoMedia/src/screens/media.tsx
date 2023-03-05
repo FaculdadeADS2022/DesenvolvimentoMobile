@@ -2,7 +2,7 @@ import { useState } from "react"
 import { View, TextInput, Text, Button } from "react-native"
 import calculomediaStyles from "./styles"
 
-const Imc = () => {
+const CalculoMedia = () => {
     const [kmPercorido, setkmPercorido] = useState('')
     const [qtdAbastecida, setqtdAbastecida] = useState('')
     const [mediaCalculada, setmediaCalculada] = useState<number>()
@@ -45,4 +45,4 @@ const Imc = () => {
     )
 }
 
-export default Imc
+export default CalculoMedia
