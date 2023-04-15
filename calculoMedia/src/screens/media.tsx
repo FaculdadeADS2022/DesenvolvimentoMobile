@@ -24,9 +24,9 @@ const CalculoMedia = () => {
 
     return(
         <View style={calculomediaStyles.containerMain}>
-            <Text style={calculomediaStyles.textMain}>Peso</Text>
+            <Text style={calculomediaStyles.textMain}>KM Percorridos</Text>
             <TextInput style={calculomediaStyles.input} onChangeText={setkmPercorido} keyboardType="decimal-pad"/>
-            <Text style={calculomediaStyles.textMain}>Altura</Text>
+            <Text style={calculomediaStyles.textMain}>Quantidade Abastecida</Text>
             <TextInput style={calculomediaStyles.input} onChangeText={setqtdAbastecida} keyboardType="decimal-pad"/>
 
             <View style={calculomediaStyles.containerSecundary}>
