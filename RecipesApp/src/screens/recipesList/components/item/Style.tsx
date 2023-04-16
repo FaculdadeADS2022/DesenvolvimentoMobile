@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
       shadowColor: '#000000',
       shadowOpacity: 0.1,
       shadowRadius: 2,
-      shadowOffset: { width: 0, height: 2 }
+      shadowOffset: { width: 0, height: 2 },
    },
    cover: {
-      height: 120,
+      height: 200,
       width: '100%',
       borderTopLeftRadius: 10,
       borderTopRightRadius: 10,
@@ -22,6 +22,8 @@ const styles = StyleSheet.create({
       margin: 10,
       fontSize: 16,
       fontWeight: 'bold',
+      color: 'black',
+      textAlign: 'center',
    },
    detailsContainer: {
       flexDirection: 'row',

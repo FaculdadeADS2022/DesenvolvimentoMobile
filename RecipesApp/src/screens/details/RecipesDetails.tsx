@@ -1,22 +1,34 @@
+import { FlatList, ListRenderItemInfo } from "react-native"
+import { Recipe } from "../../data/model"
+import { useCallback } from "react"
 import { useRoute } from "@react-navigation/native";
-import { Image, Text, View } from "react-native"
 import { RecipesDetailsRouteProp } from "./interface";
-import styles from "./Styles";
+import { useRecipeDetails } from "./hook";
+import { LoaderIndicator } from "./loader";
+import { RecipesDetails } from "./item";
 
-const RecipesDetails = () => {
+const RecipesList = () => {
 
    const {params: { recipe }} = useRoute<RecipesDetailsRouteProp>()
 
+   const { isLoading, recipes } = useRecipeDetails(recipe.idMeal)
+
+   const renderRecipe = useCallback(({ item }: ListRenderItemInfo<Recipe> ) =>
+      <RecipesDetails recipe={item}/>, [])
+
+   const recipesKeyExtractor = (_: Recipe, index: number) => index.toString()
+
+   if (isLoading) {
+      return <LoaderIndicator />
+   }
+
    return(
-      <View>
-         { recipe.strMealThumb ? 
-            <Image source={{uri: recipe.strMealThumb }} style={styles.cover}/> 
-            : null
-         }
-         <Text style={styles.title}> {recipe.strMeal} </Text>
-         <Text style={styles.content}> {recipe.strInstructions} </Text>
-      </View>
+      <FlatList
+         data={recipes}
+         renderItem={renderRecipe}
+         keyExtractor={recipesKeyExtractor}
+      />
    )
 }
 
-export default RecipesDetails;
+export default RecipesList;

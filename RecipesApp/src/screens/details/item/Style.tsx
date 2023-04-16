@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
       marginVertical: 8,
       backgroundColor: '#FFFFFF',
       borderRadius: 10,
+      borderColor: 'gray',
       elevation: 3,
       shadowColor: '#000000',
       shadowOpacity: 0.1,
@@ -13,20 +14,20 @@ const styles = StyleSheet.create({
       shadowOffset: { width: 0, height: 2 }
    },
    cover: {
-      height: 230,
-      width: '100%',
+      height: 180,
+      width: '98%',
+      margin: 5,
       borderTopLeftRadius: 10,
       borderTopRightRadius: 10,
    },
    title: {
       margin: 10,
-      fontSize: 20,
+      fontSize: 16,
       fontWeight: 'bold',
    },
-   detailsContainer: {
-      flexDirection: 'row',
-      marginHorizontal: 10,
-      marginBottom: 10,
+   content: {
+      margin: 10,
+      textAlign: 'justify',
    },
    source: {
       textAlign: 'left',
